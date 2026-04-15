@@ -1,0 +1,1 @@
+python train.py --dataset 'volleyball' --data_path '/home/disk/datasets/datasets/' --use_optical_flow --num_frame 5 --num_total_frame 10 --motion --enc_layers 2 --nheads 2 --nheads_agg 2 --test_freq 1 --batch 4 --test_batch 8 --weight_decay 1e-3

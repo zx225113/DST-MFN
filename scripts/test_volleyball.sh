@@ -1,0 +1,2 @@
+#python test_command.py --dataset 'volleyball' --data_path '/home/disk/datasets/datasets/' --num_frame 5 --num_total_frame 10 --num_activities 8 --motion  --enc_layers 2 --nheads 2 --nheads_agg 2 --model_path './checkpoints/Volleyball_8_class.pth'
+python test.py --dataset 'volleyball' --data_path '/home/disk/datasets/datasets/' --num_frame 5 --num_total_frame 10 --num_activities 8 --motion  --enc_layers 2 --nheads 2 --nheads_agg 2 --model_path './result/[volleyball]_DFGAR_<2025-08-21_10-16-15>/epoch22_91.32%.pth'
