@@ -1,24 +1,17 @@
-# Detector-Free Weakly Supervised Group Activity Recognition
+# High-Order Motion Statistics Guided Weakly Supervised Group Activity Recognition
 
-### [Dongkeun Kim](https://dk-kim.github.io/), [Jinsung Lee](https://cvlab.postech.ac.kr/lab/members.php), [Minsu Cho](https://cvlab.postech.ac.kr/~mcho/), [Suha Kwak](https://suhakwak.github.io/)
+### Xiao Ling Zhu, Xiao Zhang, TaiGuo Deng, Di Wu, YaoNan Wang, Qing Wan 
 
-### [Project Page](http://cvlab.postech.ac.kr/research/DFWSGAR/) | [Paper](https://arxiv.org/abs/2204.02139)
 
-## Overview
-This work introduces a detector-free approach for weakly supervised group activity recognition. 
+## Paper Overview
+This work introduces a Dual-branch Spatiotemporal Motion Fusion Network (DST-MFN) for weakly supervised group activity recognition (GAR). The core innovation lies in leveraging high-order motion statistics (Acceleration, Jerk, and Snap) through a Kinematic Semantic Decoupling Module (KSDM) to suppress smooth camera motion noise and filter out low-frequency interference. The framework further utilizes a High-Order Motion Statistical Transformer (HoMST) to reduce attention complexity to linear and a Spatiotemporal Fusion Module (STFM) to align local appearance features with global motion cues.
 
+![alt text](image.png)
 
 ## Citation
 If you find our code or paper useful, please consider citing our paper:
+        Application unsuccessful.
 
-    @InProceedings{Kim_2022_CVPR,
-    author    = {Kim, Dongkeun and Lee, Jinsung and Cho, Minsu and Kwak, Suha},
-    title     = {Detector-Free Weakly Supervised Group Activity Recognition},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2022},
-    pages     = {20083-20093}
-    }
 
 ## Requirements
 
@@ -30,8 +23,10 @@ If you find our code or paper useful, please consider citing our paper:
 ## Conda environment installation
     conda env create --file environment.yml
 
-    conda activate gar
+    conda activate zx
     
+## Environments commented out with # in the environment.yml file need to be manually installed as required in the requirements.
+
 ## Install additional package
     sh scripts/setup.sh
     
@@ -44,10 +39,6 @@ Dataset should be located following the file structure described below. <br/>
 - NBA dataset <br/>
 The dataset is available upon request to the authors of 
   "Social Adaptive Module for Weakly-supervised Group Activity Recognition (ECCV 2020)". 
-  
-
-## Download trained weights
-    sh scripts/download_checkpoints.sh
 
 ## Run test scripts
 
@@ -79,27 +70,6 @@ The dataset is available upon request to the authors of
         sh scripts/train_nba.sh
 
 
-
-## File structure
-
-│── Dataset/ <br/>
-│   │── volleyball/ <br/>
-│   │    └── videos/ <br/>
-│   │── NBA_dataset/ <br/>
-│   │    └── videos/ <br/>
-│   │    └── train_video_ids <br/>
-│   │    └── test_video_ids <br/>
-│── checkpoints/ <br/>
-│── scripts/ <br/>
-│── dataloader/ <br/>
-│── models/ <br/>
-│── util/ <br/>
-train.py <br/>
-test.py <br/>
-README.md <br/> 
-environment.yml <br/>
-
-
 ## Acknowledgement
-This work was supported by the NRF grant and the IITP grant funded by Ministry of Science and ICT, Korea (NRF-2021R1A2C3012728, NRF-2018R1A5A1060031, IITP-2020-0-00842, IITP-2021-0-00537, No. 2019-0-01906 Artificial Intelligence Graduate School Program-POSTECH). 
+This work was supported by the National Natural Science Foundation of China (NSFC) under Grant 62031023.
 
