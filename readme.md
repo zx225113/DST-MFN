@@ -25,7 +25,7 @@ If you find our code or paper useful, please consider citing our paper:
 
     conda activate zx
     
-## Environments commented out with # in the environment.yml file need to be manually installed as required in the requirements.
+    Environments commented out with # in the environment.yml file need to be manually installed as required in the requirements.
 
 ## Install additional package
     sh scripts/setup.sh
