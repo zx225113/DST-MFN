@@ -6,7 +6,7 @@
 ## Paper Overview
 This work introduces a Dual-branch Spatiotemporal Motion Fusion Network (DST-MFN) for weakly supervised group activity recognition (GAR). The core innovation lies in leveraging high-order motion statistics (Acceleration, Jerk, and Snap) through a Kinematic Semantic Decoupling Module (KSDM) to suppress smooth camera motion noise and filter out low-frequency interference. The framework further utilizes a High-Order Motion Statistical Transformer (HoMST) to reduce attention complexity to linear and a Spatiotemporal Fusion Module (STFM) to align local appearance features with global motion cues.
 
-![alt text](image.png)
+##![alt text](image.png)
 
 ## Citation
 If you find our code or paper useful, please consider citing our paper:
