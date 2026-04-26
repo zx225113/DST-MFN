@@ -1,6 +1,6 @@
 # High-Order Motion Statistics Guided Weakly Supervised Group Activity Recognition
 
-### Xiao Ling Zhu, Xiao Zhang, TaiGuo Deng, Di Wu, YaoNan Wang, Qing Wan 
+### Xiao Lin Zhu, Xiao Zhang, TaiGuo Deng, Di Wu, YaoNan Wang, Qing Wan 
 
 
 ## Paper Overview
