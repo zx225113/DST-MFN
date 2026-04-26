@@ -10,7 +10,7 @@ from .position_encoding import build_position_encoding
 
 class DeepFlowProcessor:
     """
-    DeepFlow光流处理器 (优化版：支持降采样加速)
+    DeepFlow光流处理器
     """
 
     def __init__(self):
@@ -18,8 +18,6 @@ class DeepFlowProcessor:
         try:
             self.deepflow = cv2.optflow.createOptFlow_DeepFlow()
         except AttributeError:
-            # 如果DeepFlow不可用，使用Farneback作为替代
-            print("DeepFlow not available, using Farneback as alternative")
             self.deepflow = None
 
     def compute_flow(self, prev_frame, next_frame):
@@ -57,11 +55,10 @@ class DeepFlowProcessor:
             prev_gray = prev_small
             next_gray = next_small
 
-        # 计算光流 (在小图上计算，速度极快)
+        # 计算光流 (小图上计算，速度快)
         if self.deepflow is not None:
             flow_small = self.deepflow.calc(prev_gray, next_gray, None)
         else:
-            # 使用Farneback光流作为替代
             flow_small = cv2.calcOpticalFlowFarneback(prev_gray, next_gray, None, 0.5, 3, 15, 3, 5, 1.2, 0)
 
         # --- 优化结束：恢复尺寸 ---
@@ -285,7 +282,7 @@ class OpticalFlowExtractor(nn.Module):
         t, c, h, w = features_with_pos.shape
         features_seq = features_with_pos.view(t, c, -1).permute(0, 2, 1)
 
-        # 应用TSSA注意力机制
+        # 应用TSSA线性注意力机制
         attended_features = self.tssa(features_seq)  # [T, H'*W', hidden_dim]
 
         # 重塑回图像格式
