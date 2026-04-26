@@ -13,10 +13,11 @@ If you find our code or paper useful, please consider citing our paper:
 
 ## Requirements
 
-- Ubuntu 16.04
+- Ubuntu 18.04.6 LTS
 - Python 3.8.5
-- CUDA 11.0
-- PyTorch 1.7.1
+- CUDA 11.3
+- PyTorch 2.0.0
+- opencv-python 4.12.0.88
 
 ## Conda environment installation
     conda env create --file environment.yml
